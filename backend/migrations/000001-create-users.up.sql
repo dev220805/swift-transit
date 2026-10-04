@@ -1,0 +1,12 @@
+-- +migrate Up
+
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    mobile VARCHAR(20) UNIQUE NOT NULL,
+    nid VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    is_student BOOLEAN DEFAULT FALSE,
+    balance REAL DEFAULT 200
+);
